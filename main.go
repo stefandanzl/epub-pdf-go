@@ -35,7 +35,6 @@ func init() {
 func main() {
 	r := gin.Default()
 	r.Use(cors.Default())
-	r.StaticFS("/", http.Dir("public"))
 
 	clients := make(map[*gin.Context]bool)
 
@@ -112,6 +111,9 @@ func main() {
 		broadcast(clients, gin.H{"status": "complete"})
 		c.JSON(200, gin.H{"status": "success"})
 	})
+
+	// r.StaticFS("/", http.Dir("public"))
+	r.Static("/static", "./public")
 
 	log.Fatal(r.Run(":3000"))
 }
