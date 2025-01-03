@@ -1,0 +1,13 @@
+.step-dot {
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    border-color: #3B82F6;
+    background-color: #3B82F6;
+}
+
+.step-dot.complete {
+    border-color: #10B981;
+    background-color: #10B981;
+}
